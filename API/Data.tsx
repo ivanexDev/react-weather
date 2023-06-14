@@ -7,6 +7,7 @@ export async function getData(city: string) {
 		const data = await response.json();
 		const completeData: TempData = {
 			temp: data.weather[0].main,
+
 			numberTemp: data.main.temp,
 			wind: data.wind.speed,
 			humidity: data.main.humidity,
