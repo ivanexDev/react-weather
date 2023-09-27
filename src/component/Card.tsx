@@ -1,5 +1,6 @@
 import "./card.css";
-import { getData, TempData } from "../../API/Data";
+import { getData } from "../../API/Data";
+import { TempData } from "../../API/interface";
 import { useState } from "react";
 import imagenes from "./imagenes";
 
