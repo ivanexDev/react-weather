@@ -4,20 +4,18 @@ import { CardInfo } from "../CardInfo";
 import imagenes from "../imagenes";
 import useGetWeather from "../../hooks/useGetWeather";
 
-const Card= () => {
+const Card = () => {
+  const { city, data, handleCity, handleData } = useGetWeather();
 
-	const {city,data,handleCity,handleData} = useGetWeather();
+  return (
+    <div className="card">
+      <SearchBar city={city} handleCity={handleCity} handleData={handleData} />
 
-	return (
-		<div className="card">
-		<SearchBar city={city} handleCity={handleCity} handleData={handleData} />
+      <img className="weather-icon" src={imagenes[data.temp]} />
 
-		<img className="weather-icon" src={imagenes[data.temp]} />
-
-		<CardInfo data={data} />
-		</div>
-	);
-	
+      <CardInfo data={data} />
+    </div>
+  );
 };
 
 export default Card;
